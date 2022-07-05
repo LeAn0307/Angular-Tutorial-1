@@ -20,7 +20,7 @@ Hero name: -->
 
   //Kiem tra xem select button nao
   <!-- cach 1 -->
-  <h2>My Heroes</h2>
+  <!-- <h2>My Heroes</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroes">
       <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
@@ -28,7 +28,7 @@ Hero name: -->
         <span class="name">{{hero.name}}</span>
       </button>
     </li>
-  </ul>
+  </ul> -->
 
 </div>
 <!-- //Xuat cai button duoc chon ra -->
@@ -51,3 +51,11 @@ Hero name: -->
 
 <!-- cach 2: truyền từ cha xuống con qua @input -->
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
