@@ -1,4 +1,10 @@
-.red{
-  /* background-color: red; */
-  color: red;
+
+.menu{
+text-decoration: blink;
+  color: white;
+  background-color: #2793ae;
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: x-large;
 }

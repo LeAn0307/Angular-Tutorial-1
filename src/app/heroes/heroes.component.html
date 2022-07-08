@@ -10,7 +10,7 @@ Hero name: -->
 
 
 <div>
-  <label for="name">Hero name: </label>
+  <label for="name">Hero </label>
 
   <!-- ngmodel khong duoc set default nen phai import FormsModule
       Cho sua ten trong input -->
@@ -18,7 +18,7 @@ Hero name: -->
   <!-- <input id="name" [(ngModel)]="hero.name" placeholder="name"> -->
 
 
-  //Kiem tra xem select button nao
+  <!-- //Kiem tra xem select button nao -->
   <!-- cach 1 -->
   <!-- <h2>My Heroes</h2>
   <ul class="heroes">
@@ -57,5 +57,25 @@ Hero name: -->
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+  </li>
+</ul>
+
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+    Add hero
+  </button>
+</div>
+
+<!-- ///////DELETE//////// -->
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
